@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis & Commentary</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Global Issues Observatory</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="issues.html">Issues</a>
+      <a href="blogs.html">Analysis</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>Analysis & Commentary</h2>
+  <div id="blogList"></div>
+</main>
+
+<script type="module">
+  import { blogs } from "./js/blogs.js";
+
+  const container = document.getElementById("blogList");
+
+  blogs.forEach(blog => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <h3>${blog.title}</h3>
+      <p class="citation">${blog.date} · ${blog.category}</p>
+      <p>${blog.excerpt}</p>
+      <a href="blog.html?id=${blog.id}">Read →</a>
+    `;
+    container.appendChild(div);
+  });
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Global Issues Observatory</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blogs.html">Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section" id="blogContent"></main>
+
+<script type="module">
+  import { blogs } from "./js/blogs.js";
+
+  const params = new URLSearchParams(window.location.search);
+  const blog = blogs.find(b => b.id === params.get("id"));
+
+  const container = document.getElementById("blogContent");
+
+  if (!blog) {
+    container.innerHTML = "<p>Article not found.</p>";
+  } else {
+    container.innerHTML = `
+      <h2>${blog.title}</h2>
+      <p class="citation">${blog.date} · ${blog.author}</p>
+      <p>${blog.content.replace(/\n/g, "<br><br>")}</p>
+    `;
+  }
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

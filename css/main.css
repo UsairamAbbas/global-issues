@@ -66,3 +66,12 @@ nav a:hover {
   font-size: 0.9rem;
   color: var(--muted);
 }
+
+/* ======================
+   BLOG / ARTICLES
+   ====================== */
+
+.citation {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
