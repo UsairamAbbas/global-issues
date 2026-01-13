@@ -4,6 +4,8 @@
 
 import { issues } from "./js/data.js";
 
+import { blogs } from "./blogs.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   highlightActiveNav();
