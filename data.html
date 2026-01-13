@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data | Global Issues Observatory</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Global Issues Observatory</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="issues.html">Issues</a>
+      <a href="data.html">Data</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>Key Global Indicators</h2>
+  <p>
+    These indicators provide contextual signals, not deterministic forecasts.
+  </p>
+
+  <div class="card">
+    <h3>Global Temperature Trend</h3>
+    <svg id="tempChart" width="300" height="150"></svg>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Global Issues Observatory</p>
+  </div>
+</footer>
+
+<script type="module">
+  import { lineChart } from "./js/charts.js";
+  const data = [1, 2, 4, 7, 11, 16, 22];
+  lineChart(document.getElementById("tempChart"), data);
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

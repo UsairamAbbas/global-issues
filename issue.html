@@ -1,0 +1,35 @@
+<script type="module">
+import { issues } from "./js/data.js";
+
+const params = new URLSearchParams(window.location.search);
+const issue = issues.find(i => i.id === params.get("id"));
+import { issues } from "./js/data.js";
+
+
+document.body.innerHTML += `
+  <main class="container">
+    <h2>${issue.title}</h2>
+    <p><strong>Category:</strong> ${issue.category}</p>
+
+    <section class="section">
+      <p>${issue.analysis}</p>
+    </section>
+
+    <section class="section">
+      <h3>Key Indicators</h3>
+      <ul>
+        ${issue.indicators.map(i => `<li>${i}</li>`).join("")}
+      </ul>
+    </section>
+
+    <section class="section">
+      <h3>References</h3>
+      ${issue.citations.map(c => `
+        <div class="citation">
+          ${c.author} (${c.year}). <em>${c.title}</em>.
+        </div>
+      `).join("")}
+    </section>
+  </main>
+`;
+</script>

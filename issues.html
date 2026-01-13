@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Issues | Global Issues Observatory</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Global Issues Observatory</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="issues.html">Issues</a>
+      <a href="data.html">Data</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Global Issues</h2>
+    <div id="issueList"></div>
+  </section>
+</main>
+
+<script type="module">
+  import { issues } from "./js/data.js";
+
+  const container = document.getElementById("issueList");
+
+  issues.forEach(issue => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <h3>${issue.title}</h3>
+      <p>${issue.summary}</p>
+      <a href="issue.html?id=${issue.id}">Read analysis →</a>
+    `;
+    container.appendChild(div);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Issues Observatory</title>
+  <meta name="description" content="An evidence-based overview of critical global challenges shaping the 21st century." />
+<link rel="stylesheet" href="css/main.css">
+<script src="js/main.js"></script>
+
+
+
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Global Issues Observatory</h1>
+      <nav aria-label="Primary navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#issues">Issues</a></li>
+          <li><a href="#data">Data</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="hero">
+      <div class="container">
+        <h2>The world is changing faster than our institutions</h2>
+        <p>
+          Climate instability, inequality, geopolitical fragmentation, and technological risk are
+          not isolated crises. They are interacting systems. Ignoring that fact is not neutral. It
+          is a decision.
+        </p>
+      </div>
+    </section>
+
+    <section id="issues" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Key Global Issues</h2>
+          <p>Select an issue to explore its scope, causes, and implications.</p>
+        </header>
+
+        <div class="issue-controls">
+          <button data-filter="all" class="active">All</button>
+          <button data-filter="environment">Environment</button>
+          <button data-filter="society">Society</button>
+          <button data-filter="geopolitics">Geopolitics</button>
+          <button data-filter="technology">Technology</button>
+        </div>
+
+        <div id="issue-grid" class="issue-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="data" class="section muted">
+      <div class="container">
+        <header class="section-header">
+          <h2>Selected Indicators</h2>
+          <p>Trends matter more than headlines.</p>
+        </header>
+
+        <div class="chart-container">
+          <svg id="climateChart" viewBox="0 0 300 150" role="img" aria-label="Global temperature anomaly trend"></svg>
+          <p class="chart-caption">Global temperature anomaly (relative trend)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About this project</h2>
+        <p>
+          This site exists to frame global problems without sensationalism or denial. It prioritizes
+          systems, evidence, and long-term consequences over comforting narratives.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Global Issues Observatory. Information is contextual, not predictive.</p>
+    </div>
+  </footer>
+
+<script type="module" src="js/main.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
